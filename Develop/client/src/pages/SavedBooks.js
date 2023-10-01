@@ -41,7 +41,7 @@ const [removeBook, _] = useMutation(REMOVE_BOOK);
 
   return (
     <>
-      <div fluid className='text-light bg-dark p-5'>
+      <div fluid="true" className='text-light bg-dark p-5'>
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
@@ -55,8 +55,8 @@ const [removeBook, _] = useMutation(REMOVE_BOOK);
         <Row>
           {userData.savedBooks.map((book) => {
             return (
-              <Col md="4">
-                <Card key={book.bookId} border='dark'>
+              <Col key={book.bookId} md="4">
+                <Card key={book.bookId} border='dark' id={book.bookId}>
                   {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
                   <Card.Body>
                     <Card.Title>{book.title}</Card.Title>
